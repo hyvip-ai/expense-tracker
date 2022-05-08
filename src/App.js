@@ -7,7 +7,6 @@ import DatePicker from './component/DatePicker';
 import { useState } from 'react';
 import { Form } from 'react-bootstrap';
 import AddExpenses from './component/AddExpenses';
-import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
 import AllOfMonth from './component/AllOfMonth';
 
