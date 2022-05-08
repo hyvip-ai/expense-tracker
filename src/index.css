@@ -82,9 +82,17 @@ body {
 }
 
 .range_picker {
-  display: flex;
   margin: 1rem auto;
+  display: flex;
   justify-content: center;
+}
+
+@media (max-width: 558px) {
+  .range_picker {
+    display: block;
+    width: 100%;
+    overflow: scroll;
+  }
 }
 
 .date-picker {
