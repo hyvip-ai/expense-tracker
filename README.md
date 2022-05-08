@@ -1,5 +1,5 @@
 ```javascript
-// Local Storage Data Storing Share
+// Local Storage Data Storing Shape
 
 expenses = {
   may: [
