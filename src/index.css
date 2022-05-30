@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   margin: 0;
   font-family: 'Poppins';
@@ -29,6 +31,7 @@ body {
   align-items: center;
   height: 100%;
 }
+
 .menuIcon {
   position: absolute;
   width: 29px;
@@ -37,6 +40,7 @@ body {
   left: 20px;
   cursor: pointer;
 }
+
 .header .menuIcon .dashTop,
 .header .menuIcon .dashBottom,
 .header .menuIcon .circle {
@@ -53,6 +57,7 @@ body {
   border-radius: 3px;
   transition: all 0.2s ease-in-out;
 }
+
 .dashBottom {
   position: absolute;
   width: 20px;
@@ -66,6 +71,7 @@ body {
   top: auto;
   bottom: 0;
 }
+
 .circle {
   position: absolute;
   height: 7px;
@@ -76,6 +82,7 @@ body {
   background: #b2daff;
   transition: all 0.2s ease-in-out;
 }
+
 .month {
   margin: 1rem auto;
   text-align: center;
@@ -104,6 +111,7 @@ body {
 .rdrDateRangePickerWrapper {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+
 .rdrCalendarWrapper {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
@@ -115,12 +123,14 @@ form {
   justify-content: center;
   align-items: center;
 }
+
 form input[type='checkbox'] {
   margin: 1rem auto;
 }
 
 input[type='text'],
-input[type='number'] {
+input[type='number'],
+input[type='date'] {
   display: block;
   width: 60%;
   height: 35px;
@@ -131,6 +141,7 @@ input[type='number'] {
   padding: 0.2rem 0.6rem;
   font-size: 1rem;
 }
+
 form p {
   width: 60%;
   text-align: left;

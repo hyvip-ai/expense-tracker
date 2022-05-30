@@ -22,6 +22,7 @@ const schema = yup.object().shape({
     .test('val test', 'Cost must be greater than 0', (value) =>
       value > 0 ? value : false
     ),
+  date: yup.string().trim(),
 });
 
 function AddExpenses() {
@@ -38,12 +39,21 @@ function AddExpenses() {
   } = useForm({ resolver: yupResolver(schema) });
 
   const onSubmit = (formData) => {
+    let monthIdx = '';
+
+    if (formData.date) {
+      monthIdx = dayjs(formData.date).month();
+    }
+
     const payload = {
       ...formData,
-      date: dayjs().format('MM/DD/YYYY'),
+      date: monthIdx
+        ? dayjs(formData.date).format('MM-DD-YYYY')
+        : dayjs().format('MM/DD/YYYY'),
       id: uuid(),
     };
-    const month = months[dayjs().month()].toLowerCase();
+
+    const month = months[monthIdx || dayjs().month()].toLowerCase();
     if (expenses[month]) {
       setExpenses({ ...expenses, [month]: [...expenses[month], payload] });
     } else {
@@ -72,6 +82,11 @@ function AddExpenses() {
         {...register('quantity')}
       ></Form.Control>
       <p className='text-danger'>{errors.quantity?.message}</p>
+      <Form.Control
+        type='date'
+        placeholder='Date'
+        {...register('date')}
+      ></Form.Control>
       <Button variant='warning' type='submit'>
         Submit
       </Button>

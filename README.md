@@ -11,3 +11,12 @@ expenses = {
   ],
 };
 ```
+
+Features List
+
+- [x] Add Expense
+- [ ] Delete Expense
+- [ ] Edit Expense
+- [x] Expense in date range
+- [x] Expense in single date
+- [ ] Add expense to a date

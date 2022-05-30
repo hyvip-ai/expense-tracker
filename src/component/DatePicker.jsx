@@ -21,9 +21,11 @@ function DatePicker() {
     if (date) {
       const month = months[dayjs(date).month()].toLowerCase();
       const expenseByMonth = expenses[month];
-
+      console.log(date);
       const expenseByDate = expenseByMonth
-        ? expenseByMonth.filter((expense) => expense.date === date)
+        ? expenseByMonth.filter((expense) =>
+            dayjs(expense.date).isSame(dayjs(date))
+          )
         : [];
       setExpenseByDate(expenseByDate);
     }
