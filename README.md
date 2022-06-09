@@ -20,3 +20,4 @@ Features List
 - [x] Expense in date range
 - [x] Expense in single date
 - [x] Add expense to a date
+- [x] Watch All expense of any month
