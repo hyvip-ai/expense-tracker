@@ -13,4 +13,6 @@ export const months = [
   'December',
 ];
 
+export const weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+
 export const EXPENSE_KEY = 'my_expenses';

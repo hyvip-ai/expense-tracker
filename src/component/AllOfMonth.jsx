@@ -2,7 +2,7 @@ import dayjs from 'dayjs';
 import React, { useState } from 'react';
 import { Table } from 'react-bootstrap';
 import { useExpenses } from '../store';
-import { months } from '../utils';
+import { months, weekDays } from '../utils';
 import NoData from './NoData';
 import shallow from 'zustand/shallow';
 
@@ -50,6 +50,7 @@ function AllOfMonth() {
               <tr>
                 <th>#</th>
                 <th>Date</th>
+                <th>Day</th>
                 <th>Expense Name</th>
                 <th>Cost</th>
                 <th>Quantity</th>
@@ -62,6 +63,7 @@ function AllOfMonth() {
                 <tr key={expense.id}>
                   <td>{index + 1}</td>
                   <td>{dayjs(expense.date).format('DD/MM/YYYY')}</td>
+                  <td>{weekDays[dayjs(expense.date).day()]}</td>
                   <td>{expense.expense}</td>
                   <td>{expense.cost}</td>
                   <td>{expense.quantity}</td>
@@ -77,7 +79,7 @@ function AllOfMonth() {
                 </tr>
               ))}
               <tr>
-                <td colSpan={5} className='text-center'>
+                <td colSpan={6} className='text-center'>
                   Total
                 </td>
                 <td colSpan={2}>

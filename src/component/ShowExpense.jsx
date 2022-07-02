@@ -1,6 +1,7 @@
 import dayjs from 'dayjs';
 import React from 'react';
 import { Table } from 'react-bootstrap';
+import { weekDays } from '../utils';
 import NoData from './NoData';
 
 function ShowExpense({ expenseArray }) {
@@ -10,6 +11,7 @@ function ShowExpense({ expenseArray }) {
         <tr>
           <th>#</th>
           <th>Date</th>
+          <th>Day</th>
           <th>Expense Name</th>
           <th>Cost</th>
           <th>Quantity</th>
@@ -21,6 +23,7 @@ function ShowExpense({ expenseArray }) {
           <tr key={expense.id}>
             <td>{index + 1}</td>
             <td>{dayjs(expense.date).format('DD/MM/YYYY')}</td>
+            <td>{weekDays[dayjs(expense.date).day()]}</td>
             <td>{expense.expense}</td>
             <td>{expense.cost}</td>
             <td>{expense.quantity}</td>
@@ -28,7 +31,7 @@ function ShowExpense({ expenseArray }) {
           </tr>
         ))}
         <tr>
-          <td colSpan={5} className='text-center'>
+          <td colSpan={6} className='text-center'>
             Total
           </td>
           <td>
