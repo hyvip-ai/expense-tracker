@@ -49,13 +49,16 @@ function AddExpenses() {
       ...formData,
       date: monthIdx
         ? dayjs(formData.date).format('MM-DD-YYYY')
-        : dayjs().format('MM/DD/YYYY'),
+        : dayjs().format('MM-DD-YYYY'),
       id: uuid(),
     };
 
     const month = months[monthIdx || dayjs().month()].toLowerCase();
     if (expenses[month]) {
-      setExpenses({ ...expenses, [month]: [...expenses[month], payload] });
+      const sortedExpenses = [...expenses[month], payload].sort(
+        (a, b) => new Date(a.date) - new Date(b.date)
+      );
+      setExpenses({ ...expenses, [month]: [...sortedExpenses] });
     } else {
       setExpenses({ ...expenses, [month]: [payload] });
     }
